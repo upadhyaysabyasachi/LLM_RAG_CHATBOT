@@ -48,6 +48,18 @@ else:
     retriever = db.as_retriever()
 
     # Define template for chatbot
+
+    # Define template for chatbot
+    template = """Answer the question based only on the following context:
+
+    {context}
+
+    Question: {question}
+
+    Suggest some funding schemes.
+
+    """
+
     
 
     # Define RAG chatbot function
@@ -67,7 +79,7 @@ else:
 
     # Define Streamlit UI
     def main():
-        st.title('RAG Chatbot')
+        st.title('WEP GenAI Query Engine')
 
         user_input = st.text_input('You:', '')
         if st.button('Send'):
